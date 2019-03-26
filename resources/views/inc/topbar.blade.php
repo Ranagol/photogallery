@@ -1,3 +1,4 @@
+<!--
 <div class="top-bar">
     <div class="rov">
         <div class="top-bar-left">
@@ -8,4 +9,14 @@
             </ul>
         </div>
     </div>
+</div>
+-->
+<div class="container">
+	<nav class="navbar navbar-expand-lg navbar-light bg-light">
+	  <a class="navbar-brand" href="#">Photo Gallery</a>
+	    <div class="navbar-nav">
+	      <a class="nav-item nav-link active" href="/">Home</a>
+	      <a class="nav-item nav-link" href="/albums/create">Create new album</a>
+	    </div>
+	</nav>
 </div>

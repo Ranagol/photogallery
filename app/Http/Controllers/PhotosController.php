@@ -12,11 +12,17 @@ class PhotosController extends Controller
       return view('photos.create')->with('album_id', $album_id);
     }
 
+
+
+
+
+
     public function store(Request $request){
       $this->validate($request, [
         'title' => 'required',
         'photo' => 'image|max:1999'
       ]);
+      //dd($request->album_id);----this is how we can call the album id
 
       // Get filename with extension
       $filenameWithExt = $request->file('photo')->getClientOriginalName();//VALAHOL ITT A PROBLÉMA
@@ -31,11 +37,11 @@ class PhotosController extends Controller
       $filenameToStore = $filename.'_'.time().'.'.$extension;
 
       // Uplaod image
-      $path= $request->file('photo')->storeAs('public/photos/'.$request->input('album_id'), $filenameToStore);
+      $path= $request->file('photo')->storeAs('public/photos/'. $request->album_id, $filenameToStore);
 
       // Upload Photo
       $photo = new Photo;
-      $photo->album_id = $request->input('album_id');
+      $photo->album_id = $request->album_id;
       $photo->title = $request->input('title');
       $photo->description = $request->input('description');
       $photo->size = $request->file('photo')->getClientSize();
@@ -43,8 +49,11 @@ class PhotosController extends Controller
 
       $photo->save();
 
-      return redirect('/albums/'.$request->input('album_id'))->with('success', 'Photo Uploaded');
+      return redirect('/albums/'.$request->album_id)->with('success', 'Photo Uploaded');
     }
+
+
+
 
   public function show($id){
     $photo = Photo::find($id);
