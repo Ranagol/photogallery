@@ -2,8 +2,9 @@
 
 @section('content')
   <h1>{{$album->name}}</h1>
-  <a class="button secondary" href="/">Go Back</a>
-  <a class="button" href="/photos/create/{{$album->id}}">Upload Photo To Album</a>
+  <a class="button secondary" href="/">Go back</a>
+  <br>
+  <a class="button" href="/photos/create/{{$album->id}}">Upload photo to album</a>
   <hr>
 
  @if(count($album->photos) > 0)<!--here we are checking if there are any photos... -->

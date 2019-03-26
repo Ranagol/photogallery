@@ -1,12 +1,14 @@
 @extends('layouts.app')
 
 @section('content')
+
   @if(count($albums) > 0)<!--here we are checking if there are any albums... -->
     <?php
       $colcount = count($albums);//here we are counting how many albums do we have 
   	  $i = 1;//this is just an iterator we will compare this with the $colcount later
     ?>
     <div class="container">
+      <h1>Albums</h1>
       <div class="row"><!--and this is our first row with the albums -->
         @foreach($albums as $album)
           @if($i == $colcount)<!--if there is only 1 album, do this here -->
