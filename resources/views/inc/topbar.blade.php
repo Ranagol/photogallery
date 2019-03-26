@@ -15,8 +15,8 @@
 	<nav class="navbar navbar-expand-lg navbar-light bg-light">
 	  <a class="navbar-brand" href="#">Photo Gallery</a>
 	    <div class="navbar-nav">
-	      <a class="nav-item nav-link active" href="/">Home</a>
-	      <a class="nav-item nav-link" href="/albums/create">Create new album</a>
+	      <a class="nav-item nav-link" href="/">Photo albums</a>
+	      <a class="nav-item nav-link" href="/albums/create">Create a new photo album</a>
 	    </div>
 	</nav>
 </div>
