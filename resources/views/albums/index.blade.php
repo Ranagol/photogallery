@@ -1,4 +1,5 @@
 @extends('layouts.app')
+<!--THIS IS SHOWING ALL THE ALBUMS ON ONE PAGE-->
 
 @section('content')
 

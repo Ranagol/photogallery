@@ -1,9 +1,10 @@
 @extends('layouts.app')
+<!--THIS IS SHOWING 1 PHOTO, WHEN WE CLICK ON IT-->
 
 @section('content')
 <!--THIS IS FOR SHOWING THE PICTURE-->
-	<h3>{{$photo->title}}</h3>
-	<p>{{$photo->description}}</p>
+	<h3>Photo: {{$photo->title}}</h3>
+	<p>Description: {{$photo->description}}</p>
 	<a href="/albums/{{$photo->album_id}}">Back to gallery</a>
 	<div class="container">
 		<img src="/storage/photos/{{$photo->album_id}}/{{$photo->photo}}" alt="{{$photo->title}}" width="1200">

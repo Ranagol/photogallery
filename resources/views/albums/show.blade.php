@@ -1,11 +1,23 @@
 @extends('layouts.app')
+<!--THIS IS SHOWING ALL THE PHOTOS OF A CHOOSEN ALBUM. HERE WE WANT TO BE ABLE TO DELETE ALBUMS-->
 
 @section('content')
-  <h1>{{$album->name}}</h1>
+  
+  <h1>Album: {{$album->name}}</h1>
   <a class="button secondary" href="/">Go back</a>
   <br>
   <a class="button" href="/photos/create/{{$album->id}}">Upload photo to album</a>
-  <hr>
+  <br>
+
+
+  <form method="POST" action="">
+    @csrf
+    @method('DELETE')
+    <input class="btn btn-danger" type="button" name="deletealbum" value="Delete this album">
+  </form>
+  <br>
+
+
 
  @if(count($album->photos) > 0)<!--here we are checking if there are any photos... -->
     <?php
