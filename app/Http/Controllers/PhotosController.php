@@ -63,6 +63,7 @@ class PhotosController extends Controller
   public function destroy($id){
     $photo = Photo::find($id);//but, here... we not only want to delete it from the db, we also want to delete this image from our Laravel folder too. For that, we nee this: use Illuminate\Support\Facades\Storage;
     if (Storage::delete('public/photos/' . $photo->album_id . '/' . $photo->photo)) {//this part will actually delete the file. This here: 'public/photos/' . $photo->album_id . '/' . $photo->photo is a way to build up a link, where the file is. So, IF the photo was deleted from the Laravel file system, then...
+    //for this Storage delete process we must insert this too into this file: use Illuminate\Support\Facades\Storage;
       $photo->delete();//...delete the photo from the db too.
       return redirect('/')->with('success', 'Photo deleted!');
     }

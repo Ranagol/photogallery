@@ -7,7 +7,7 @@
 	<p>Description: {{$photo->description}}</p>
 	<a href="/albums/{{$photo->album_id}}">Back to gallery</a>
 	<div class="container">
-		<img src="/storage/photos/{{$photo->album_id}}/{{$photo->photo}}" alt="{{$photo->title}}" width="1200">
+		<img src="/storage/photos/{{$photo->album_id}}/{{$photo->photo}}" alt="{{$photo->title}}" width="800">
 	</div>
 	<br>
 	

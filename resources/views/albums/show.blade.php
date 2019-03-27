@@ -4,21 +4,21 @@
 @section('content')
   
   <h1>Album: {{$album->name}}</h1>
-  <a class="button secondary" href="/">Go back</a>
+  <a class="button secondary" href="/">Gallery</a>
   <br>
-  <a class="button" href="/photos/create/{{$album->id}}">Upload photo to album</a>
+  <a class="button" href="/photos/create/{{$album->id}}">Upload new photo to this album</a>
   <br>
 
-
-  <form method="POST" action="">
+<!--THIS BELOW IS FOR DELETING THE ALBUM-->
+  <form method="POST" action="/albums/{{$album->id}}">
     @csrf
     @method('DELETE')
-    <input class="btn btn-danger" type="button" name="deletealbum" value="Delete this album">
+    <input class="btn btn-danger" type="submit"  value="Delete this album">
   </form>
   <br>
 
 
-
+<!--HERE BELOW WE ARE SHOWING ALL THE PHOTOS BELONGING TO THIS ALBUM -->
  @if(count($album->photos) > 0)<!--here we are checking if there are any photos... -->
     <?php
       $colcount = count($album->photos);//here we are counting how many photos do we have 

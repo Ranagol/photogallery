@@ -9,7 +9,7 @@
   	  $i = 1;//this is just an iterator we will compare this with the $colcount later
     ?>
     <div class="container">
-      <h1>Albums</h1>
+      <h1>Photo Gallery</h1>
       <div class="row"><!--and this is our first row with the albums -->
         @foreach($albums as $album)
           @if($i == $colcount)<!--if there is only 1 album, do this here -->
